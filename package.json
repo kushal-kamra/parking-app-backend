@@ -6,10 +6,12 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint ./",
-    "test": "jest --collectCoverage"
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --collectCoverage"
   },
+  "type": "module",
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "transform": {}
   },
   "repository": {
     "type": "git",
