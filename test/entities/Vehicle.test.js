@@ -7,8 +7,12 @@ describe("Vehicle Class", () => {
         const number = '1234';
         const newVehicle = new Vehicle(VehicleTypes.motorcycle, number);
 
-        expect(newVehicle)
-            .toEqual(expect.any(Object));
+        expect(newVehicle).toEqual(
+            expect.objectContaining({
+                type: VehicleTypes.motorcycle,
+                number,
+            })
+        );
     });
 
     it("Check type passed in constructor is valid", async () => {
