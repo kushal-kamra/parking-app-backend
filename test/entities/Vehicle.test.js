@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import VehicleTypes from "../../enums/vehicleTypes";
+import VehicleTypes from "../../enums/VehicleTypes";
 import Vehicle from "../../entities/Vehicle";
 
 describe("Vehicle Class", () => {
