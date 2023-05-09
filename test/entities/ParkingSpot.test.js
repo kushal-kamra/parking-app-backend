@@ -6,16 +6,14 @@ import VehicleTypes from "../../enums/VehicleTypes";
 
 describe("ParkingSpot Class", () => {
     it("Check instance of ParkingSpot Class", async () => {
-        const number = '1234';
-        const newVehicle = new Vehicle(VehicleTypes.motorcycle, number);
         const id = 1;
-        const newParkingSpot = new ParkingSpot(id, newVehicle);
+        const newParkingSpot = new ParkingSpot(id);
         
         expect(newParkingSpot).toEqual(
             expect.objectContaining({
                 id,
                 isEmpty: true,
-                vehicle: expect.any(Vehicle),
+                vehicle: null,
             })
         );
     });
@@ -28,18 +26,5 @@ describe("ParkingSpot Class", () => {
         expect(() => {
             new ParkingSpot(id, newVehicle);
         }).toThrow(new Error('Incorrect ID Provided'));
-    });
-
-    it("Check vehicle passed in constructor is valid", async () => {
-        const number = '1234';
-        const newVehicle = {
-            type: VehicleTypes.motorcycle,
-            number
-        };
-        const id = 1;
-
-        expect(() => {
-            new ParkingSpot(id, newVehicle);
-        }).toThrow(new Error('Incorrect Vehicle Object Provided'));
     });
 });
