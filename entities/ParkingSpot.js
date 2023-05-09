@@ -18,6 +18,11 @@ class ParkingSpot {
         this.isEmpty = false;
         this.vehicle = vehicle;
     }
+
+    removeVehicle() {
+        this.isEmpty = true;
+        this.vehicle = null;
+    }
 }
 
 export default ParkingSpot;

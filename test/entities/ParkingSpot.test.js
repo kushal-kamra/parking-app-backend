@@ -26,7 +26,7 @@ describe("ParkingSpot Class", () => {
         }).toThrow(new Error('Incorrect ID Provided'));
     });
 
-    it("Check ParkingSpot.parkVehicle() check isEmpty is false", async () => {
+    it("Check ParkingSpot.parkVehicle() isEmpty is false", async () => {
         const id = 1;
         const newParkingSpot = new ParkingSpot(id);
         const number = '1234';
@@ -42,7 +42,7 @@ describe("ParkingSpot Class", () => {
         );
     });
 
-    it("Check ParkingSpot.parkVehicle() check vehicle is Vehicle object", async () => {
+    it("Check ParkingSpot.parkVehicle() vehicle is Vehicle object", async () => {
         const id = 1;
         const newParkingSpot = new ParkingSpot(id);
         const number = '1234';
@@ -54,5 +54,22 @@ describe("ParkingSpot Class", () => {
         expect(() => {
             newParkingSpot.parkVehicle(newVehicle);
         }).toThrow(new Error('Invalid Vehicle Provided'));
+    });
+
+    it("Check ParkingSpot.removeVehicle() isEmpty & vehicle is null", async () => {
+        const id = 1;
+        const newParkingSpot = new ParkingSpot(id);
+        const number = '1234';
+        const newVehicle = new Vehicle(VehicleTypes.motorcycle, number);
+        newParkingSpot.parkVehicle(newVehicle);
+        newParkingSpot.removeVehicle();
+
+        expect(newParkingSpot).toEqual(
+            expect.objectContaining({
+                id,
+                vehicle: null,
+                isEmpty: true
+            })
+        );
     });
 });
