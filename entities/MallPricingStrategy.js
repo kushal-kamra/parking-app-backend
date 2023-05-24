@@ -4,7 +4,7 @@ import PricingStrategy from "./PricingStrategy";
 import VehicleCategory from "../const/VehicleCategory";
 
 class MallPricingStrategy extends PricingStrategy {
-    // eslint-disable-next-line class-methods-use-this, consistent-return
+    // eslint-disable-next-line class-methods-use-this
     calculateFees(entryTimestamp, vehicleCategory) {
         if (!Number.isInteger(entryTimestamp)) {
             throw new Error('Incorrect entryTimestamp Provided');
@@ -15,14 +15,17 @@ class MallPricingStrategy extends PricingStrategy {
         }
 
         const hoursPassed = Math.abs(entryTimestamp - Date.now()) / 3600000;
-
+        let fees = 0;
+        
         if (vehicleCategory == VehicleCategory[0]) {
-            return hoursPassed * 10;
+            fees = hoursPassed * 10;
         } else if (vehicleCategory == VehicleCategory[1]) {
-            return hoursPassed * 20;
+            fees = hoursPassed * 20;
         } else if (vehicleCategory == VehicleCategory[2]) {
-            return hoursPassed * 50;
+            fees = hoursPassed * 50;
         }
+
+        return fees;
     }
 }
 

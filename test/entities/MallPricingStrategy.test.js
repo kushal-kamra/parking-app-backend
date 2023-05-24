@@ -41,7 +41,7 @@ describe("MallPricingStrategy Class", () => {
             // eslint-disable-next-line no-new
             const mallPricing = new MallPricingStrategy();
             const date5HoursBefore = `${Date.now() - 18000000}`;
-            mallPricing.calculateFees(date5HoursBefore, "2wheelers");
+            mallPricing.calculateFees(date5HoursBefore, VehicleCategory[0]);
         }).toThrow(new Error('Incorrect entryTimestamp Provided'));
     });
 })
