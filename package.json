@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint ./",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --collectCoverage --verbose --forceExit --detectOpenHandles"
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --collectCoverage --verbose --forceExit --detectOpenHandles",
+    "clean": "jest --clearCache"
   },
   "type": "module",
   "jest": {
