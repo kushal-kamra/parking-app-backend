@@ -18,24 +18,24 @@ class StadiumPricingStrategy extends PricingStrategy {
         let fees = 0;
 
         if (vehicleCategory == VehicleCategory[0]) {
-            if (hoursPassed < 4) {
-                fees = 30;
+            if (hoursPassed > 0) {
+                fees += 30;
             }
-            if (hoursPassed >= 4 && hoursPassed < 12) {
-                fees = 90;
+            if (hoursPassed >= 4) {
+                fees += 60;
             }
             if (hoursPassed >= 12) {
-                fees = 90 + ((Math.floor(hoursPassed) - 12) * 100);
+                fees += ((Math.floor(hoursPassed) - 12) * 100);
             }
         } else if (vehicleCategory == VehicleCategory[1]) {
-            if (hoursPassed < 4) {
-                fees = 60;
+            if (hoursPassed > 0) {
+                fees += 60;
             }
-            if (hoursPassed >= 4 && hoursPassed < 12) {
-                fees = 120;
+            if (hoursPassed >= 4) {
+                fees += 120;
             }
             if (hoursPassed >= 12) {
-                fees = 120 + ((Math.floor(hoursPassed) - 12) * 200);
+                fees += ((Math.floor(hoursPassed) - 12) * 200);
             }
         }
 

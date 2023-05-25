@@ -32,7 +32,7 @@ describe("StadiumPricingStrategy Class", () => {
         const date5HoursBefore = Date.now() - 18000000;
         const fees = stadiumPricing.calculateFees(date5HoursBefore, VehicleCategory[1]);
 
-        expect(fees).toEqual(120);
+        expect(fees).toEqual(180);
     });
 
     it("Check StadiumPricingStrategy for 4wheeler-light + 3 hours", async () => {
@@ -48,7 +48,7 @@ describe("StadiumPricingStrategy Class", () => {
         const date5HoursBefore = Date.now() - 50400000;
         const fees = stadiumPricing.calculateFees(date5HoursBefore, VehicleCategory[1]);
 
-        expect(fees).toEqual(520);
+        expect(fees).toEqual(580);
     });
 
     it("Check StadiumPricingStrategy for 4wheeler-heavy", async () => {
