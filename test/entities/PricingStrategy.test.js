@@ -4,7 +4,7 @@ import PricingStrategy from "../../entities/PricingStrategy";
 describe("PricingStrategy Class", () => {
     it("Check instance of class Pricing", async () => {
         expect(() => {
-            new PricingStrategy().calculateFees();
+            PricingStrategy.calculateFees();
         }).toThrow(new Error('Implement calculateFees'))
     });
 });
