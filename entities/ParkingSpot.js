@@ -8,6 +8,7 @@ class ParkingSpot {
 
         this.id = id;
         this.vehicle = null;
+        this.entryDateTime = Date.now();
         this.isEmpty = true;
     }
 
