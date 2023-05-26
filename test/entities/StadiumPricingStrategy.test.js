@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import VehicleCategory from "../../const/VehicleCategory";
-import StadiumPricingStrategy from "../../entities/ParkingStrategy/StadiumPricingStrategy";
+import StadiumPricingStrategy from "../../entities/PricingStrategy/StadiumPricingStrategy";
 
 describe("StadiumPricingStrategy Class", () => {
     it("Check StadiumPricingStrategy for 2wheeler + 5 hours", async () => {

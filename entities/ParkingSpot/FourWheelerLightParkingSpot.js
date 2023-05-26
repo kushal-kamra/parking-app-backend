@@ -1,5 +1,5 @@
 import ParkingSpot from "./ParkingSpot";
-import PricingFactory from "../ParkingStrategy/PricingFactory";
+import PricingFactory from "../PricingStrategy/PricingFactory";
 import VehicleCategory from "../../const/VehicleCategory";
 
 class FourWheelerLightParkingSpot extends ParkingSpot {
