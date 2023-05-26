@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-else-return */
-import PricingStrategy from "../PricingStrategy";
+import PricingStrategy from "./PricingStrategy";
 import VehicleCategory from "../../const/VehicleCategory";
 
 class AirportPricingStrategy extends PricingStrategy {

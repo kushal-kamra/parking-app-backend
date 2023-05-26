@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import PricingStrategy from "../../entities/PricingStrategy";
+import PricingStrategy from "../../entities/ParkingStrategy/PricingStrategy";
 
 describe("PricingStrategy Class", () => {
     it("Check instance of class Pricing", async () => {

@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
 /* eslint-disable no-undef */
-import ParkingSpot from "../../entities/ParkingSpot";
+import ParkingSpot from "../../entities/ParkingSpot/ParkingSpot";
 import Vehicle from "../../entities/Vehicle";
 import VehicleTypes from "../../enums/VehicleTypes";
 
