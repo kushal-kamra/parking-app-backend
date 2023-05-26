@@ -5,7 +5,7 @@ import VehicleCategory from "../const/VehicleCategory";
 
 class AirportPricingStrategy extends PricingStrategy {
     // eslint-disable-next-line class-methods-use-this
-    calculateFees(entryTimestamp, vehicleCategory) {
+    static calculateFees(entryTimestamp, vehicleCategory) {
         if (!Number.isInteger(entryTimestamp)) {
             throw new Error('Incorrect entryTimestamp Provided');
         }
