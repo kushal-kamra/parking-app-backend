@@ -1,6 +1,6 @@
 import ParkingSpot from "./ParkingSpot";
-import PricingFactory from "./PricingFactory";
-import VehicleCategory from "../const/VehicleCategory";
+import PricingFactory from "../ParkingStrategy/PricingFactory";
+import VehicleCategory from "../../const/VehicleCategory";
 
 class TwoWheelerParkingSpot extends ParkingSpot {
     constructor(id, pricingStrategy) {

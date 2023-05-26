@@ -1,9 +1,9 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-else-return */
 import PricingStrategy from "./PricingStrategy";
-import VehicleCategory from "../const/VehicleCategory";
+import VehicleCategory from "../../const/VehicleCategory";
 
-class MallPricingStrategy extends PricingStrategy {
+class StadiumPricingStrategy extends PricingStrategy {
     // eslint-disable-next-line class-methods-use-this
     static calculateFees(entryTimestamp, vehicleCategory) {
         if (!Number.isInteger(entryTimestamp)) {
@@ -16,17 +16,31 @@ class MallPricingStrategy extends PricingStrategy {
 
         const hoursPassed = Math.abs(entryTimestamp - Date.now()) / 3600000;
         let fees = 0;
-        
+
         if (vehicleCategory == VehicleCategory[0]) {
-            fees = hoursPassed * 10;
+            if (hoursPassed > 0) {
+                fees += 30;
+            }
+            if (hoursPassed >= 4) {
+                fees += 60;
+            }
+            if (hoursPassed >= 12) {
+                fees += ((Math.floor(hoursPassed) - 12) * 100);
+            }
         } else if (vehicleCategory == VehicleCategory[1]) {
-            fees = hoursPassed * 20;
-        } else if (vehicleCategory == VehicleCategory[2]) {
-            fees = hoursPassed * 50;
+            if (hoursPassed > 0) {
+                fees += 60;
+            }
+            if (hoursPassed >= 4) {
+                fees += 120;
+            }
+            if (hoursPassed >= 12) {
+                fees += ((Math.floor(hoursPassed) - 12) * 200);
+            }
         }
 
         return fees;
     }
 }
 
-export default MallPricingStrategy;
+export default StadiumPricingStrategy;

@@ -1,4 +1,4 @@
-import PricingStrategies from "../const/PricingStrategies";
+import PricingStrategies from "../../const/PricingStrategies";
 import AirportPricingStrategy from "./AirportPricingStrategy";
 import MallPricingStrategy from "./MallPricingStrategy";
 import StadiumPricingStrategy from "./StadiumPricingStrategy";

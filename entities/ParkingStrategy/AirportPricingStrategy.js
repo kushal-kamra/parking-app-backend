@@ -1,9 +1,9 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-else-return */
-import PricingStrategy from "./PricingStrategy";
-import VehicleCategory from "../const/VehicleCategory";
+import PricingStrategy from "../PricingStrategy";
+import VehicleCategory from "../../const/VehicleCategory";
 
-class StadiumPricingStrategy extends PricingStrategy {
+class AirportPricingStrategy extends PricingStrategy {
     // eslint-disable-next-line class-methods-use-this
     static calculateFees(entryTimestamp, vehicleCategory) {
         if (!Number.isInteger(entryTimestamp)) {
@@ -18,24 +18,24 @@ class StadiumPricingStrategy extends PricingStrategy {
         let fees = 0;
 
         if (vehicleCategory == VehicleCategory[0]) {
-            if (hoursPassed > 0) {
-                fees += 30;
+            if (hoursPassed >= 1) {
+                fees += 40;
             }
-            if (hoursPassed >= 4) {
+            if (hoursPassed >= 8) {
                 fees += 60;
             }
-            if (hoursPassed >= 12) {
-                fees += ((Math.floor(hoursPassed) - 12) * 100);
+            if (hoursPassed >= 24) {
+                fees += (Math.ceil((Math.ceil(hoursPassed) - 24)/24) * 80);
             }
         } else if (vehicleCategory == VehicleCategory[1]) {
             if (hoursPassed > 0) {
                 fees += 60;
             }
-            if (hoursPassed >= 4) {
-                fees += 120;
-            }
             if (hoursPassed >= 12) {
-                fees += ((Math.floor(hoursPassed) - 12) * 200);
+                fees += 80;
+            }
+            if (hoursPassed >= 24) {
+                fees += (Math.ceil((Math.ceil(hoursPassed) - 24)/24) * 100);;
             }
         }
 
@@ -43,4 +43,4 @@ class StadiumPricingStrategy extends PricingStrategy {
     }
 }
 
-export default StadiumPricingStrategy;
+export default AirportPricingStrategy;

@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import VehicleCategory from "../../const/VehicleCategory";
-import MallPricingStrategy from "../../entities/MallPricingStrategy";
+import MallPricingStrategy from "../../entities/ParkingStrategy/MallPricingStrategy";
 
 describe("MallPricingStrategy Class", () => {
     it("Check MallPricingStrategy for 2wheeler", async () => {
