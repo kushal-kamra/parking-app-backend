@@ -6,13 +6,18 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint ./",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --collectCoverage --verbose --forceExit --detectOpenHandles",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --collectCoverage --forceExit --detectOpenHandles",
     "clean": "jest --clearCache"
   },
   "type": "module",
   "jest": {
     "testEnvironment": "node",
-    "transform": {}
+    "transform": {},
+    "collectCoverageFrom": [
+      "./**.js",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ]
   },
   "repository": {
     "type": "git",
