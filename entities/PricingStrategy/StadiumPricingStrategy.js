@@ -5,7 +5,7 @@ import VehicleCategory from "../../const/VehicleCategory.js";
 
 class StadiumPricingStrategy extends PricingStrategy {
     // eslint-disable-next-line class-methods-use-this
-    static calculateFees(entryTimestamp, vehicleCategory) {
+    static calculateFees(entryTimestamp, vehicleCategory, exitDateTime) {
         if (!Number.isInteger(entryTimestamp)) {
             throw new Error('Incorrect entryTimestamp Provided');
         }
@@ -14,7 +14,7 @@ class StadiumPricingStrategy extends PricingStrategy {
             throw new Error('Incorrect vehicleCategory Provided');
         }
 
-        const hoursPassed = Math.abs(entryTimestamp - Date.now()) / 3600000;
+        const hoursPassed = Math.ceil(Math.abs(exitDateTime - entryTimestamp) / 3600000);
         let fees = 0;
 
         if (vehicleCategory == VehicleCategory[0]) {

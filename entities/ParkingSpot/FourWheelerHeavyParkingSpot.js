@@ -8,8 +8,8 @@ class FourWheelerHeavyParkingSpot extends ParkingSpot {
         this.pricingStrategy = PricingFactory.getPricingStrategy(pricingStrategy);
     }
 
-    unparkVehicle() {
-        const parkingFees = this.pricingStrategy.calculateFees(this.entryDateTime, VehicleCategory[2]);
+    unparkVehicle(exitDateTime) {
+        const parkingFees = this.pricingStrategy.calculateFees(this.entryDateTime, VehicleCategory[2], exitDateTime);
         super.unparkVehicle();
 
         return parkingFees;

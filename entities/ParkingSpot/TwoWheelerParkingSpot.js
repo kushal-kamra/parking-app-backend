@@ -8,8 +8,8 @@ class TwoWheelerParkingSpot extends ParkingSpot {
         this.pricingStrategy = PricingFactory.getPricingStrategy(pricingStrategy);
     }
 
-    unparkVehicle() {
-        const parkingFees = this.pricingStrategy.calculateFees(this.entryDateTime, VehicleCategory[0]);
+    unparkVehicle(exitDateTime) {
+        const parkingFees = this.pricingStrategy.calculateFees(this.entryDateTime, VehicleCategory[0], exitDateTime);
         super.unparkVehicle();
 
         return parkingFees;

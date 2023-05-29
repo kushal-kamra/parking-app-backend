@@ -129,7 +129,7 @@ class ParkingSpotManager {
 
     unparkTwoWheeler(parkingTicket, exitDateTime) {
         this.freeTwoWheelerSpots.add(parkingTicket.parkingSpotId);
-        const fees = this.twoWheelerSpots[parkingTicket.parkingSpotId - 1].unparkVehicle();
+        const fees = this.twoWheelerSpots[parkingTicket.parkingSpotId - 1].unparkVehicle(exitDateTime);
         const parkingReceipt = this.generateParkingReceipt(parkingTicket, exitDateTime, fees);
         this.receipts.push(parkingReceipt);
         parkingReceipt.printParkingReceipt();
@@ -139,7 +139,7 @@ class ParkingSpotManager {
 
     unparkFourWheelerLight(parkingTicket, exitDateTime) {
         this.freeFourWheelerLightSpots.add(parkingTicket.parkingSpotId);
-        const fees = this.fourWheelerLightSpots[parkingTicket.parkingSpotId - 1].unparkVehicle();
+        const fees = this.fourWheelerLightSpots[parkingTicket.parkingSpotId - 1].unparkVehicle(exitDateTime);
         const parkingReceipt = this.generateParkingReceipt(parkingTicket, exitDateTime, fees);
         this.receipts.push(parkingReceipt);
         parkingReceipt.printParkingReceipt();
@@ -149,7 +149,7 @@ class ParkingSpotManager {
 
     unparkFourWheelerHeavy(parkingTicket, exitDateTime) {
         this.freeFourWheelerHeavySpots.add(parkingTicket.parkingSpotId);
-        const fees = this.fourWheelerHeavySpots[parkingTicket.parkingSpotId - 1].unparkVehicle();
+        const fees = this.fourWheelerHeavySpots[parkingTicket.parkingSpotId - 1].unparkVehicle(exitDateTime);
         const parkingReceipt = this.generateParkingReceipt(parkingTicket, exitDateTime, fees);
         this.receipts.push(parkingReceipt);
         parkingReceipt.printParkingReceipt();
