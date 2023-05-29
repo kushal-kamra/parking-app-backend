@@ -25,7 +25,7 @@ class StadiumPricingStrategy extends PricingStrategy {
                 fees += 60;
             }
             if (hoursPassed >= 12) {
-                fees += ((Math.floor(hoursPassed) - 12) * 100);
+                fees += (Math.ceil(hoursPassed) - 12) * 100;
             }
         } else if (vehicleCategory == VehicleCategory[1]) {
             if (hoursPassed > 0) {
@@ -35,7 +35,7 @@ class StadiumPricingStrategy extends PricingStrategy {
                 fees += 120;
             }
             if (hoursPassed >= 12) {
-                fees += ((Math.floor(hoursPassed) - 12) * 200);
+                fees += (Math.ceil(hoursPassed) - 12) * 200;
             }
         }
 
