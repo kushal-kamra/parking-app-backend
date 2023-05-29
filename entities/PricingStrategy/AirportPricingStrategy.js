@@ -14,7 +14,7 @@ class AirportPricingStrategy extends PricingStrategy {
             throw new Error('Incorrect vehicleCategory Provided');
         }
 
-        const hoursPassed = Math.ceil(Math.abs(exitDateTime - entryTimestamp) / 3600000);
+        const hoursPassed = Math.abs(exitDateTime - entryTimestamp) / 3600000;
         let fees = 0;
 
         if (vehicleCategory == VehicleCategory[0]) {
