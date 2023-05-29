@@ -1,4 +1,4 @@
-import VehicleCategory from "../const/VehicleCategory";
+import VehicleCategory from "../const/VehicleCategory.js";
 
 const VehicleTypes = Object.freeze({
     motorcycle: VehicleCategory[0],

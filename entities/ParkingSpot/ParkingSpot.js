@@ -1,4 +1,4 @@
-import Vehicle from "../Vehicle";
+import Vehicle from "../Vehicle.js";
 
 class ParkingSpot {
     constructor(id) {
@@ -8,21 +8,23 @@ class ParkingSpot {
 
         this.id = id;
         this.vehicle = null;
-        this.entryDateTime = Date.now();
+        this.entryDateTime = null;
         this.isEmpty = true;
     }
 
-    parkVehicle(vehicle) {
+    parkVehicle(vehicle, entryDateTime) {
         if (!(vehicle instanceof Vehicle)) {
             throw new Error('Invalid Vehicle Provided');
         }
-        this.isEmpty = false;
         this.vehicle = vehicle;
+        this.entryDateTime = entryDateTime;
+        this.isEmpty = false;
     }
 
-    removeVehicle() {
+    unparkVehicle() {
         this.isEmpty = true;
         this.vehicle = null;
+        this.entryDateTime = null;
     }
 }
 

@@ -1,4 +1,4 @@
-import VehicleCategory from "../const/VehicleCategory";
+import VehicleCategory from "../const/VehicleCategory.js";
 
 class Vehicle {
     constructor(type, number) {

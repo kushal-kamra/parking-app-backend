@@ -1,6 +1,6 @@
-import ParkingSpot from "./ParkingSpot";
-import PricingFactory from "../PricingStrategy/PricingFactory";
-import VehicleCategory from "../../const/VehicleCategory";
+import ParkingSpot from "./ParkingSpot.js";
+import PricingFactory from "../PricingStrategy/PricingFactory.js";
+import VehicleCategory from "../../const/VehicleCategory.js";
 
 class FourWheelerHeavyParkingSpot extends ParkingSpot {
     constructor(id, pricingStrategy) {
@@ -8,9 +8,9 @@ class FourWheelerHeavyParkingSpot extends ParkingSpot {
         this.pricingStrategy = PricingFactory.getPricingStrategy(pricingStrategy);
     }
 
-    removeVehicle() {
+    unparkVehicle() {
         const parkingFees = this.pricingStrategy.calculateFees(this.entryDateTime, VehicleCategory[2]);
-        super.removeVehicle();
+        super.unparkVehicle();
 
         return parkingFees;
     }

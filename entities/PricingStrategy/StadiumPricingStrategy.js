@@ -1,7 +1,7 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-else-return */
-import PricingStrategy from "./PricingStrategy";
-import VehicleCategory from "../../const/VehicleCategory";
+import PricingStrategy from "./PricingStrategy.js";
+import VehicleCategory from "../../const/VehicleCategory.js";
 
 class StadiumPricingStrategy extends PricingStrategy {
     // eslint-disable-next-line class-methods-use-this
@@ -39,7 +39,7 @@ class StadiumPricingStrategy extends PricingStrategy {
             }
         }
 
-        return fees;
+        return Math.floor(fees);
     }
 }
 

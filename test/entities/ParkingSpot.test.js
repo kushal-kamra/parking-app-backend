@@ -62,7 +62,7 @@ describe("ParkingSpot Class", () => {
         const number = '1234';
         const newVehicle = new Vehicle(VehicleTypes.motorcycle, number);
         newParkingSpot.parkVehicle(newVehicle);
-        newParkingSpot.removeVehicle();
+        newParkingSpot.unparkVehicle();
 
         expect(newParkingSpot).toEqual(
             expect.objectContaining({

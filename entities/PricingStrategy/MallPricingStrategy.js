@@ -1,7 +1,7 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-else-return */
-import PricingStrategy from "./PricingStrategy";
-import VehicleCategory from "../../const/VehicleCategory";
+import PricingStrategy from "./PricingStrategy.js";
+import VehicleCategory from "../../const/VehicleCategory.js";
 
 class MallPricingStrategy extends PricingStrategy {
     // eslint-disable-next-line class-methods-use-this
@@ -25,7 +25,7 @@ class MallPricingStrategy extends PricingStrategy {
             fees = hoursPassed * 50;
         }
 
-        return fees;
+        return Math.floor(fees);
     }
 }
 

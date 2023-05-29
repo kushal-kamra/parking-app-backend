@@ -1,7 +1,7 @@
-import PricingStrategies from "../../const/PricingStrategies";
-import AirportPricingStrategy from "./AirportPricingStrategy";
-import MallPricingStrategy from "./MallPricingStrategy";
-import StadiumPricingStrategy from "./StadiumPricingStrategy";
+import PricingStrategies from "../../const/PricingStrategies.js";
+import AirportPricingStrategy from "./AirportPricingStrategy.js";
+import MallPricingStrategy from "./MallPricingStrategy.js";
+import StadiumPricingStrategy from "./StadiumPricingStrategy.js";
 
 class PricingFactory {
     static getPricingStrategy(pricingStrategy) {
