@@ -13,6 +13,7 @@ class ParkingReceipt {
     printParkingReceipt() {
         console.log('Parking Receipt');
         console.log(`   Receipt Number: ${this.receiptId}`);
+        console.log(`   Ticket Number: ${this.ticketId}`);
         console.log(`   Entry Date-time: ${moment(this.entryDateTime).format('DD-MMM-YYYY hh:mm:ss')}`);
         console.log(`   Exit Date-time: ${moment(this.exitDateTime).format('DD-MMM-YYYY hh:mm:ss')}`);
         console.log(`   Fees: ${this.fees}`);
