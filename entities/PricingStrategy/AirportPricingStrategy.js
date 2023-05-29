@@ -19,23 +19,23 @@ class AirportPricingStrategy extends PricingStrategy {
 
         if (vehicleCategory == VehicleCategory[0]) {
             if (hoursPassed >= 1) {
-                fees += 40;
+                fees = 40;
             }
             if (hoursPassed >= 8) {
-                fees += 60;
+                fees = 60;
             }
-            if (hoursPassed >= 24) {
-                fees += (Math.ceil((Math.ceil(hoursPassed) - 24)/24) * 80);
+            if (hoursPassed > 24) {
+                fees = (Math.ceil(Math.ceil(hoursPassed)/24) * 80);
             }
         } else if (vehicleCategory == VehicleCategory[1]) {
             if (hoursPassed > 0) {
-                fees += 60;
+                fees = 60;
             }
             if (hoursPassed >= 12) {
-                fees += 80;
+                fees = 80;
             }
-            if (hoursPassed >= 24) {
-                fees += (Math.ceil((Math.ceil(hoursPassed) - 24)/24) * 100);;
+            if (hoursPassed > 24) {
+                fees = (Math.ceil(Math.ceil(hoursPassed)/24) * 100);
             }
         }
 

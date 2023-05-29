@@ -24,7 +24,7 @@ describe("AirportPricingStrategy Class", () => {
         const date50HoursBefore = now - 180000000;
         const fees = AirportPricingStrategy.calculateFees(date50HoursBefore, VehicleCategory[0], now);
 
-        expect(fees).toEqual(260);
+        expect(fees).toEqual(240);
     });
 
     it("Check AirportPricingStrategy for 4wheeler-light + 30 mins", async () => {
@@ -48,7 +48,7 @@ describe("AirportPricingStrategy Class", () => {
         const date50HoursBefore = now - 180000000;
         const fees = AirportPricingStrategy.calculateFees(date50HoursBefore, VehicleCategory[1], now);
 
-        expect(fees).toEqual(340);
+        expect(fees).toEqual(300);
     });
 
     it("Check AirportPricingStrategy for 4wheeler-heavy", async () => {
