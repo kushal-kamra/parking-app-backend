@@ -4,9 +4,9 @@ import VehicleTypes from "./enums/VehicleTypes.js";
 
 const mall = new ParkingSpotManager(100, 80, 10, PricingStrategies[0]);
 
-const vehicle1 = mall.parkVehicle(VehicleTypes.motorcycle, '1234', Date.now());
-const vehicle2 = mall.parkVehicle(VehicleTypes.car, '5678', Date.now());
-const vehicle3 = mall.parkVehicle(VehicleTypes.truck, '4567', Date.now());
-mall.unparkVehicle(VehicleTypes.truck, vehicle3, Date.now() + 7140000);
-mall.unparkVehicle(VehicleTypes.motorcycle, vehicle1, Date.now() + 12600000);
-mall.unparkVehicle(VehicleTypes.car, vehicle2, Date.now() + 21660000);
+const motorcycle = mall.parkVehicle(VehicleTypes.motorcycle, '1234', Date.now());
+const car = mall.parkVehicle(VehicleTypes.car, '5678', Date.now());
+const truck = mall.parkVehicle(VehicleTypes.truck, '4567', Date.now());
+mall.unparkVehicle(VehicleTypes.truck, truck, Date.now() + 7140000);
+mall.unparkVehicle(VehicleTypes.motorcycle, motorcycle, Date.now() + 12600000);
+mall.unparkVehicle(VehicleTypes.car, car, Date.now() + 21660000);
